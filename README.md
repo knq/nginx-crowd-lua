@@ -12,12 +12,12 @@ client/library.
 
 - Install related Debian packages for Lua and lua-Spore dependency:
 
-    aptitude install lua5.1 luarocks
-    luarocks install lua-spore
+	aptitude install lua5.1 luarocks
+	luarocks install lua-spore
 
 - Copy the `crowd-auth.lua` to somewhere accessible by nginx:
 
-    mkdir -p /etc/nginx lua && cp crowd-auth.lua /etc/nginx/lua
+	mkdir -p /etc/nginx lua && cp crowd-auth.lua /etc/nginx/lua
 
 - [Add a new application in
 Crowd](https://confluence.atlassian.com/display/CROWD/Adding+an+Application),
@@ -29,21 +29,21 @@ password created in the previous step.
 
 - Add a `access_by_lua_file` directive in a nginx site stanza, similar to the following:
 
-    server {
-      listen 80;
+	server {
+	  listen 80;
 
-      server_name host.example.com;
-      root /var/www/host.example.com;
+	  server_name host.example.com;
+	  root /var/www/host.example.com;
 
-      location ~ ^/protected/ {
-        set $cwd_user 'unknown';
-        set $cwd_email 'unknown@unknown.com';
+	  location ~ ^/protected/ {
+	    set $cwd_user 'unknown';
+	    set $cwd_email 'unknown@unknown.com';
 
-        access_by_lua_file /etc/nginx/lua/crowd-auth.lua;
+	    access_by_lua_file /etc/nginx/lua/crowd-auth.lua;
 
-        fastcgi_param REMOTE_USER $cwd_user;
-      }
-    }
+	    fastcgi_param REMOTE_USER $cwd_user;
+	  }
+	}
 
 ## Authenticating against Atlassian JIRA or other Apps ##
 While untried, modifying this script for use authenticating against
