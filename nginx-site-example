@@ -1,0 +1,15 @@
+server {
+  listen 80;
+
+  server_name host.example.com;
+  root /var/www/host.example.com;
+
+  location ~ ^/protected/ {
+    set $cwd_user 'unknown';
+    set $cwd_email 'unknown@unknown.com';
+
+    access_by_lua_file /etc/nginx/lua/crowd-auth.lua;
+
+    fastcgi_param REMOTE_USER $cwd_user;
+  }
+}

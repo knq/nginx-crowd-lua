@@ -41,7 +41,7 @@ end
 
 -- define crowd client based off spore json definition
 local crowd = require 'Spore'.new_from_string([[{
-  "base_url" : "http://127.0.0.1:8095/crowd",
+  "base_url" : "<CROWD_APP_URL>",
   "name" : "crowd",
   "authentication": true,
   "methods": {
