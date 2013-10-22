@@ -14,6 +14,8 @@ same, however it requires building your own packages. It is available
 available as, in all things, it is preferrable (for me, at any rate), to use
 packages when available over building packages or compiling software directly.
 
+Also, please see the related [JIRA Issue](https://jira.atlassian.com/browse/CWD-2754).
+
 ## Installation and Configuration ##
 
 - Install related packages for Lua and lua-Spore dependency:
