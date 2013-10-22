@@ -5,7 +5,7 @@ in [Lua](http://www.lua.org/), for use with the [access_by_lua_file](https://git
 This is used in production on Debian 7.2, running the latest
 [dotdeb](http://www.dotdeb.org) nginx packages. An attempt was made to use as
 much "off-the-shelf" packaging as possible. This script relies
-on the use of the [lua-Spore](http://fperrad.github.io/lua-Spore/) as a REST
+on the use of [lua-Spore](http://fperrad.github.io/lua-Spore/) REST
 client/library.
 
 Please note there is an actual nginx module available that can accomplish the
