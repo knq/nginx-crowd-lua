@@ -22,6 +22,7 @@ Also, please see the related [JIRA Issue](https://jira.atlassian.com/browse/CWD-
 
 ```
 aptitude install lua5.1 luarocks
+luarocks install luasec
 luarocks install lua-spore
 ```
 
